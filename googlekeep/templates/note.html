@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/note.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Srisakdi&display=swap" rel="stylesheet">
+    <title>Google Keep</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="{% static '/images/logo.png'%}" alt="">
+        <h1>KeepNote</h1>
+    </div>
+
+    <div class="main_note">
+        <form class="note-form" action="/" method="post">
+            {% csrf_token %}
+            <input class="input" type="text" name="title" placeholder="Title" autocomplete="off" onclick="myFun()"
+                required>
+            <textarea class="create_note" id="create_note" name="note" cols="" rows="" placeholder="Write a Note..."
+                required></textarea>
+            <button class="plus_sign"><img src="{% static '/images/add.png'%}" alt="Add"></button>
+        </form>
+    </div>
+    <!-- created notes-->
+    <div class="all_notes">
+        {% for note in notes %}
+        <div class="note">
+
+            <h1>{{note.title}}</h1>
+            <br>
+            <p>{{note.note}}</p>
+            <h5>{{note.date_posted}}</h5>
+            <form style="height: 20px; width: 100%;" action="{% url 'deleteNote' note.id %}" method="post">
+                {% csrf_token %}
+                <button
+                    style="height: 2rem; width: 2rem; border: 1px solid #E83A59; border-radius: 50%; float: right; background-color: #f81d45; cursor: pointer;">
+                    
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+
+<!--<script>
+
+    function myFun() {
+        const x = document.getElementById("create_note");
+
+        if (x.style.display == "none") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+        }
+    }
+
+</script>-->
+
+</html>

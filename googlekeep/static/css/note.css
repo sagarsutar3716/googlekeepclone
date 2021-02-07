@@ -1,0 +1,121 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    width: 100%;
+    line-height: 90px;
+    background-color:black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 50px;
+    color: white;
+    box-shadow: 5px 3px 15px -5px rgba(0,0,0,1);
+    font-family: 'Roboto Mono',monospace;
+    font-weight:800px ;
+}
+
+.main_note{
+    width: 500px;
+    padding: 15px 10px 5px 10px;
+    margin: 20px auto; 
+}
+
+.note-form{
+    min-height: 50px;
+    color: #ecf0f1;
+    padding: 15px 10px 5px 10px;
+    box-shadow: 3px 5px 15px -5px rgba(0,0,0,1);
+    border-radius: 10px;
+    position: relative;
+}
+
+.input{
+    width: 100%;
+    line-height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    margin: 10px 0;
+    font-family: 'Roboto Mono',monospace;
+    font-weight: 800px;
+}
+
+.create_note{
+    width: 400px;
+    line-height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    margin: 10px 0;
+    font-family: 'Srisakdi',cursive;
+}
+
+
+.plus_sign img{
+    background: transparent;
+    width: 30px;
+    height: 40px;
+    position: absolute;
+    bottom: -12px;
+    left: 460px;
+    background-color: white;
+    box-shadow: 5px 5px 15px -5px rgba(0,0,0,1);
+    border-radius: 50% !important;
+}
+
+.all_notes{
+    margin-left: 130px;
+}
+
+.note{
+background: #fff;
+border-radius: 7px;
+box-shadow: 0px 2px 5px #ccc;
+padding: 10px;
+width: 240px;
+margin: 16px;
+float: left;
+}
+
+.note h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.1em;
+    margin-bottom: 6px;
+}
+
+.note p{
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.note .btn{
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    outline: none;
+    box-shadow: 3px 3px 15px -10px rgba(0,0,0,1);
+    border-radius: 50%;
+}
+
+button .deleteIcon{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+button:focus{
+    outline: none;
+}
+
+
